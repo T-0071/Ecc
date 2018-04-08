@@ -1,0 +1,120 @@
+#tou {
+  height: 30px;
+  background-color: #F5F5F5;
+  font-size: 12px;
+  padding: 0 10px;
+}
+
+#tou .ull li {
+  float: left;
+  padding-right: 10px;
+  line-height: 30px;
+}
+
+#tou .uls {
+  float: right;
+}
+
+#tou .uls li {
+  float: left;
+  padding-right: 10px;
+  line-height: 30px;
+}
+
+#box .nv {
+  height: 100px;
+}
+
+#box .nv h1 {
+  width: 127px;
+  height: 60px;
+  background: url("../img/1.png") no-repeat;
+  float: left;
+  margin-left: 54px;
+  margin-top: 16px;
+}
+
+#box .nv h2 {
+  float: left;
+  font-size: 24px;
+  color: #000;
+  margin: 30px 0 0 16px;
+}
+
+#box .nv span {
+  float: right;
+  font-size: 14px;
+  color: #B3B3B3;
+  margin-top: 38px;
+  margin-right: 54px;
+}
+
+#box .nv .nv_r {
+  float: right;
+  margin-right: 25px;
+}
+
+#box .nv .nv_r input {
+  width: 400px;
+  height: 36px;
+  border: 2px solid #459D36;
+  margin-left: 50px;
+}
+
+#box .nv .nv_r button {
+  width: 76px;
+  height: 40px;
+  background-color: #459D36;
+  margin-top: 29px;
+  color: #fff;
+}
+
+.lus {
+  border-bottom: 2px solid #ddd;
+  height: 70px;
+  margin: 0 20px;
+}
+
+.lus .tt {
+  float: left;
+  margin: 30px 0 0 40px;
+}
+
+.lus .tt li {
+  float: left;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.lus .tt li span {
+  border-right: 1px solid #ccc;
+  padding: 0 20px;
+}
+
+.lus .tt li:hover {
+  color: #FF6000;
+}
+
+.big .cont {
+  height: 300px;
+  background-color: #ccc;
+  margin-top: 20px;
+}
+
+.jie .cont {
+  height: 50px;
+  background-color: #f90;
+  font-size: 12px;
+}
+
+.jie .cont .uls li {
+  float: left;
+  line-height: 50px;
+  padding: 0 20px;
+}
+
+.jie .cont .ull li {
+  float: right;
+  line-height: 50px;
+  padding: 0 20px;
+}
