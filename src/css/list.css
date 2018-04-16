@@ -495,10 +495,6 @@
   padding: 10px;
 }
 
-#main .cont .main_r .main_r_x ul li:hover {
-  border: 1px solid #58bc58;
-}
-
 #main .cont .main_r #page span {
   display: inline-block;
   margin: 5px;

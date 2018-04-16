@@ -3,7 +3,7 @@
         let username = document.querySelector('#username');
         let password = document.querySelector('#password');
         let btnReg = document.querySelector('.dd');
-        let reg = document.querySelector('.reg');
+        let regl = document.querySelector('.regl');
         btnReg.onclick=function(){
             let _username=username.value;
             let _password=password.value;
@@ -16,12 +16,12 @@
                     password:_password
                 },
                 success:function(data){
-                    console.log(data)
+                    // console.log(data)
 
                     if(data === 'success'){
-                        location.href='index1.html';
+                        location.href='../index.html';
                     }else if(data === 'fail'){
-                        reg.innerHTML='登录失败！';
+                        regl.innerHTML='登录失败！';
 
                     }
                 }

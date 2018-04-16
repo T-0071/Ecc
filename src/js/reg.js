@@ -24,7 +24,7 @@
         username.onblur = function(){
             let _username = username.value;
            
-        if(_username !== '') {
+          if(_username !== '') {
             ajax({
                 url:'../api/reg.php',
                 data:{
@@ -48,7 +48,7 @@
     }
 
 
- var str='abcdefghijklmnopqrstuvwxyz0123456789';
+        var str='abcdefghijklmnopqrstuvwxyz0123456789';
               btn.onblur=function(){
                        vs();
                }
@@ -59,30 +59,28 @@
                     var index=parseInt(Math.random()*str.length);
                           _code+=str[index];
                         }
-                  
-                         y_zm.innerHTML=_code.toUpperCase();
-                             
+                      return _code;     
                        }
+                       rt=vs();
+                        y_zm.innerHTML=rt;
 
-                       yzm.onblur=function(){
-                        var _yzm = yzm.value;
-                        var yzms=y_zm.value;
-                        if(_yzm === ''){
-                          output.innerHTML = '请输入验证码';
-                            return false;
+                        yzm.onblur=function(){
+                          var _yzm = yzm.value;
+                          var yzms=y_zm.value;
+                          if(_yzm === ''){
+                            output.innerHTML = '请输入验证码';
+                              return false;
+                          }
+                          if(_yzm === rt){
+                              // alert('验证正确')
+                           output.innerHTML = '验证正确';
+                              return true;
+                         }
+                          else{
+                           output.innerHTML = '验证错误';
+                              return false;
+                          }
                         }
-                        if(_yzm === yzms){
-                            // alert('验证正确')
-                         output.innerHTML = '验证正确';
-                            return true;
-                       }
-                        else{
-                         output.innerHTML = '验证错误';
-                            return false;
-                        }
-
-
-                                   }
                  var _password;
                 password.onblur = function() {
                    _password = password.value;
@@ -105,53 +103,39 @@
 
 
         //注册
-        btn.onclick = function(){
+        btn.onclick = function(e){
+            e = e ||window.event;
 
             let _username = username.value;
-
             let _password = password.value;
              let _paw = paw.value;
-            ajax({
-                url:'../api/reg.php',
-                data:{
-                    username:_username,
-                    password:_password,
-                     paw:_paw,
-                    type:'resl'
-                },
-                success:function(resl){
-                    if(resl =='success'){ console.log(resl)
-                      output.innerHTML = '注册成功！';
-                     location.href='login.html';
-                     
-                    }
-                    else{ 
-                    output.innerHTML="注册失败";
-                    
+              let _tel = tel.value;
+              // if(_username !== ''){
+                  ajax({
+                    url:'../api/reg.php',
+                    data:{
+                        username:_username,
+                        password:_password,
+                         paw:_paw,
+                          tel:_tel,
+                        type:'reg'
+                    },
+                    success:function(data){
+                        if(data =='ok'){ console.log(data)
+                          output.innerHTML = '注册成功！';
+                         location.href='login.html';
+                   
+                        }
+                        else{ 
+                        
+                              output.innerHTML="注册失败";
 
-                       
+                           
+                        }
                     }
-                }
-            })
-    
+                })
+              // }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     })
 
 

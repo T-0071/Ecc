@@ -21,12 +21,12 @@ require('cont.php');
         //注册保存到数据库
         $sql = "insert into user(username,password) values('$username','$password')";
         //执行sql语句
-        $res = $conn->query($sql);
+        $resl = $conn->query($sql);
 
             if($resl){
                  
 
-                echo "success"; 
+                echo "ok"; 
 
                 
             }else{
