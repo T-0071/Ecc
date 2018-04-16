@@ -46,16 +46,17 @@
   width: 369px;
   height: 408px;
   border: 1px solid #ccc;
-  background-color: #ff0;
   position: absolute;
   top: 220px;
   right: 30px;
+  background-color: #fff;
 }
 
 #box .main .dl input {
   width: 300px;
   height: 45px;
   margin: 30px 0 8px 20px;
+  border: 1px solid #ccc;
 }
 
 #box .main .dl p {
@@ -96,9 +97,16 @@
   color: #666666;
 }
 
+#box .main .dl img {
+  position: absolute;
+  top: 300px;
+  left: 15px;
+}
+
 #box footer {
   padding-top: 67px;
   font-size: 12px;
+  position: relative;
   height: 150px;
   color: #999999;
 }

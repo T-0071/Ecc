@@ -11,9 +11,7 @@
         }
         span{
             float:right;font-size:14px;color:#B3B3B3;margin-top: 38px; margin-right: 54px; 
-            // a{
-            //   font-size:18px;
-            // }
+            
         }
     }
 
@@ -23,9 +21,9 @@
         }
 
         .dl{
-            width: 369px;height: 408px;border:1px solid #ccc;background-color:#ff0;position:absolute;top:220px;right:30px;
+            width: 369px;height: 408px;border:1px solid #ccc;position:absolute;top:220px;right:30px;background-color:#fff;
             input{
-                width: 300px;height: 45px;margin:30px 0 8px 20px;
+                width: 300px;height: 45px;margin:30px 0 8px 20px;border:1px solid #ccc;
             }
             p{float:left;font-size:14px;color:#666666;}
             span{float:right;margin-right: 10px;font-size:14px;color:#666666;}
@@ -37,11 +35,14 @@
             h4{
                 float:right;margin-right: 10px;font-size:14px;color:#666666;
             }
+            img{
+            position:absolute;top:300px;left:15px;
+        }
 
         }
     }
 
- footer{padding-top: 67px;font-size:12px;
+ footer{padding-top: 67px;font-size:12px;position:relative;
         height: 150px;color:#999999;
         ul{
             margin-left: 450px;
@@ -50,10 +51,7 @@
             }
         }
         p{margin-top: 6px;margin-left: 200px;}
+        
      }
-
-
-
-
 
 }

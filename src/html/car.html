@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/bases.css" />
         <link rel="stylesheet" type="text/css" href="../css/car.css" />
+        <script src="../js/car.js"></script>
+        <script src="../lib/jquery-3.2.1.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../lib/ajax_bx.js"></script>
     </head>
     <body>
     <div id="tou">
@@ -16,8 +20,8 @@
                 <li>评价（608.4万）</li>
             </ul>
             <ul class="uls">
-                <li>[登录]</li>
-                <li>[注册]</li>
+               <li><a href="login.html">[登录]</a></li>
+          <li><a href="reg.html">[注册]</a></li>
                 <li>购物车（3）</li>
                 <li>我的E宠</li>
                 <li>收藏</li>
@@ -29,48 +33,72 @@
         
     <div id="box">
         <div class="nv">
-                <h1></h1>
-                <h2>购物车</h2>
-                <div class="nv_r">
-                    <input type="text" placeholder="&nbsp;福来恩"/><button>搜索</button>
-                </div>
-
-               
-                
+            <h1></h1>
+            <h2>购物车</h2>
+            <div class="nv_r">
+                <input type="text" placeholder="&nbsp;福来恩"/><button>搜索</button>
+            </div> 
         </div>
     </div>
     <div class="lus">
      <ul class="tt">
-                    <li>E宠购物车<span></span></li>
-                    <li>E宠国际购物车<span></span></li>
-                    <li>我的收藏<span></span></li>
-                    <li>我购买过<span></span></li>
-                    <li>最近浏览<span></span></li>
-                </ul>
+        <li>E宠购物车<span></span></li>
+        <li>E宠国际购物车<span></span></li>
+        <li>我的收藏<span></span></li>
+        <li>我购买过<span></span></li>
+        <li>最近浏览<span></span></li>
+    </ul>
         
 
 
     </div>
-    <div class="big">
-        <div class="cont">
+        <div id="carList">
+          <p class="total"></p>
+          <!-- <p class="single"></p> -->
+
             
         </div>
-    </div>
     <div class="jie">
         <div class="cont">
         <ul class="uls">
            <li>全选</li>
-         <li>[删除选中商品]</li>
          <li>[收藏选中商品]</li> 
+          <li><a href="#" id="btnClear" style="font-size:20px;color:#E3393C;border:1px solid #ddd;padding:5px;">Clear All</a></li>
+            <li> <a href="../list.html"><button>继续购物</button></a></li>
         </ul>
         <ul class="ull">
         <li>关税总额：</li>
-        <li>总价(不含运费)：</li>
+        <li >总价(不含运费)：<span class="subPrice"></span></li>
             
         </ul>
           
         </div>
     </div>
-    
+    <div class="tu">
+        <div class="cont">
+            <img src="../img/a_1.jpg" height="100" width="1200" alt="" />
+        </div>
+    </div>
+
+    <div class="boxd">
+        <div class="cont">
+            <div class="gou">
+                
+            </div>
+        </div>
+    </div>
+    <div class="bi">
+        <div class="cont">
+        <img src="../img/a_2.jpg" height="350" width="1200" alt=""  style="margin-bottom:30px;"/>
+    </div>
+</div>
+        <div class="box1">
+            <div class="cont">
+            <div class="wu">
+            </div> 
+            </div>
+        </div>
+ <footer id="pageFooter"></footer>
+
     </body>
 </html>

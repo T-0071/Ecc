@@ -2,7 +2,6 @@
 $page=isset($_GET['page']) ? $_GET['page']:1;
 $qty=isset($_GET['qty']) ?$_GET['qty']:24;
 
-
 //文件路径
 $path='../api/data/goodslist.json';
 
@@ -14,8 +13,6 @@ $cont=fread($file,filesize($path));
 
 //json=>array
 $data=json_decode($cont);
-
-
 
 $res=array(
     "total"=>count($data),

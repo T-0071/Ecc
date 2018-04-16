@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #tou {
   height: 30px;
   background-color: #F5F5F5;
@@ -95,10 +96,77 @@
   color: #FF6000;
 }
 
-.big .cont {
-  height: 300px;
-  background-color: #ccc;
+#carList ul {
+  margin: 10px 20px;
+}
+
+#carList ul li {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  background-color: #FCFCFC;
   margin-top: 20px;
+  height: 100px;
+}
+
+#carList ul li img {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  float: left;
+}
+
+#carList ul li h4 {
+  font-size: 12px;
+  margin-top: 60px;
+  float: left;
+}
+
+#carList ul li .qtys {
+  width: 60px;
+  height: 25px;
+  border: 1px solid #999;
+  float: left;
+  margin: 30px 0 0 600px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#carList ul li .qtys button:nth-child(1) {
+  float: left;
+  width: 20px;
+  height: 25px;
+}
+
+#carList ul li .qtys button:nth-child(2) {
+  float: right;
+  width: 20px;
+  height: 25px;
+}
+
+#carList ul li p {
+  float: right;
+  padding: 30px 100px  0 0;
+}
+
+#carList ul li .price::before {
+  content: "￥";
+}
+
+#carList ul li .btn-close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  padding: 0 5px;
+  cursor: default;
+  font-size: 20px;
+}
+
+#carList ul li .btn-close:hover {
+  background-color: #f00;
+  color: #fff;
 }
 
 .jie .cont {
@@ -113,8 +181,127 @@
   padding: 0 20px;
 }
 
+.jie .cont .uls li button {
+  padding: 5px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
 .jie .cont .ull li {
   float: right;
   line-height: 50px;
   padding: 0 20px;
+}
+
+.jie .cont .ull li .subPrice {
+  padding: 5px 20px;
+  color: #f00;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.jie .cont .ull li .subPrice::before {
+  content: '￥';
+  font-size: 20px;
+}
+
+.boxd .cont {
+  height: 500px;
+}
+
+.boxd .cont .gou ul {
+  margin-left: 10px;
+}
+
+.boxd .cont .gou ul li {
+  float: left;
+  width: 200px;
+  height: 274px;
+  padding: 15px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding-left: 15px;
+}
+
+.boxd .cont .gou ul li img {
+  width: 140px;
+  padding-left: 10px;
+  transition: all 2s;
+}
+
+.boxd .cont .gou ul li img:hover {
+  transform: scale(1.1);
+}
+
+.boxd .cont .gou ul li .title {
+  padding-top: 35px;
+  font-size: 12px;
+  color: #000;
+}
+
+.boxd .cont .gou ul li .lists {
+  font-size: 14px;
+  color: #F6743E;
+}
+
+.boxd .cont .gou ul li .ours {
+  font-size: 12px;
+  color: #999;
+}
+
+.boxd .cont .gou ul li:nth-child(1), .boxd .cont .gou ul li:nth-child(6) {
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.box1 .cont .wu {
+  height: 600px;
+  margin-bottom: 100px;
+}
+
+.box1 .cont .wu ul {
+  margin-left: 10px;
+}
+
+.box1 .cont .wu ul li {
+  float: left;
+  width: 200px;
+  height: 274px;
+  padding: 15px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding-left: 15px;
+}
+
+.box1 .cont .wu ul li img {
+  width: 140px;
+  padding-left: 10px;
+  transition: all 2s;
+}
+
+.box1 .cont .wu ul li img:hover {
+  transform: scale(1.1);
+}
+
+.box1 .cont .wu ul li .title {
+  padding-top: 35px;
+  font-size: 12px;
+  color: #000;
+}
+
+.box1 .cont .wu ul li .lists {
+  font-size: 14px;
+  color: #F6743E;
+}
+
+.box1 .cont .wu ul li .ours {
+  font-size: 12px;
+  color: #999;
+}
+
+.box1 .cont .wu ul li:nth-child(1), .box1 .cont .wu ul li:nth-child(6) {
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
 }

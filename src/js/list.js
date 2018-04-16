@@ -1,13 +1,19 @@
-/* 
-* @Author: Marte
-* @Date:   2018-03-30 16:33:54
-* @Last Modified by:   Marte
-* @Last Modified time: 2018-04-06 21:00:34
-*/
-document.addEventListener('DOMContentLoaded', function() {
+
+     require.config({
+        paths:{
+            jQuery:'../lib/jquery-3.2.1',
+            ajax_bx:'../lib/ajax_bx'
+         
+        }
+
+    })
+  require(['jQuery','ajax_bx','common'],function(){
+             // $('#pageHeader').load('header.html');
+             $('#pageFooter').load('footer.html');
+    
  let box=document.querySelector('.main_r_x');
  let page=document.querySelector('#page');
- let pi=document.querySelector('#pi');
+ let pi=document.querySelector('#pi');console.log(pi);
 let qty=24;
    let status = [200,304];
 
@@ -20,46 +26,26 @@ let qty=24;
             let ul=document.createElement('ul');
             goodes();
                     function goodes(){
-       
             ul.innerHTML= res.data.map(function(item){
-
                 return `
-                        <li>
+                        <a href="#" class="details"><li data-guid="${item.id}">
                         <h4 class="imt"><img src="${item.img}"></h4>
                         <P>${item.title}</P>
                         <span class="list"><del>${item.listprice}</del></span>
                         <span class="op">${item.ourprice}</span><br/>
                         <i>${item.sale}</i>
                         <i>${item.interact}</i>
-                        </li>
+                        </li></a>
                 `
             }).join('');
 
             box.innerHTML="";
 
            box.appendChild(ul);
-}
 
-     //加码数据
-        var params ='';
-        // console.log(params);
-        var lis = box.getElementsByTagName('li');
-        // console.log(lis);
-        for(var i = 0;i<lis.length;i++){
-            lis[i].id = i;
-            console.log(lis[i].id);
-            lis[i].onclick = function(){
-               for(var key in res[this.id]){
-                // console.log(key,resl[this.id][key]);
-                params += key + '='+encodeURI(res[this.id][key])+'&';
-               } 
-               params=params.slice(0,-1);
-                console.log(params);
-                // location.href = '01_商品详情页面.html?'+params;
-                location.href = 'goods.html?'+params;
-            }
-        }
-           
+
+    }
+     
          var change=1;
         pi.onclick=function(){
             if(change==1){
@@ -100,13 +86,43 @@ let qty=24;
                     page.appendChild(span);
                 }
 
+
+     //加码数据 传参
+        var params ='';
+        var lis = box.getElementsByTagName('li');
+        for(var i = 0;i<lis.length;i++){
+            lis[i].id = i;
+            lis[i].onclick = function(){
+               for(var key in res.data[this.id]){
+                params += key + '='+encodeURI(res.data[this.id][key])+'&';
+               } 
+               params=params.slice(0,-1);
+                console.log(params);
+                location.href = 'goods.html?'+params;
+            }
+        }
+
+
+    //          document.onclick=function(e){
+        
+    //     if(e.target.className=='details'){console.log(555);console.log(2333333)
+    //         var data_guid=e.target.parentNode.parentNode.getAttribute("data-guid");
+    //         // console.log(data_id)
+    //          e.target.href="goods.html?id="+data_guid;
+    //     }
+    // }
+
+
+
+
+
+
+
             }
         }  
     xhr.open('get','../api/lists.php',true);
                 xhr.send();
   //创建分页
-               
-             
                 //点击分页切换
                 page.onclick=function(e){
                     if(e.target.tagName.toLowerCase()==='span'){
@@ -120,17 +136,6 @@ let qty=24;
 
                     }
                 }
-         
-
-
-                
-        
-
-
- 
-
-
-
     
 })
 
