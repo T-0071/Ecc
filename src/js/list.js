@@ -26,7 +26,8 @@ let qty=24;
             let ul=document.createElement('ul');
             goodes();
                     function goodes(){
-            ul.innerHTML= res.data.map(function(item){
+
+            ul.innerHTML+= res.data.map(function(item){
                 return `
                         <a href="#" class="details"><li data-guid="${item.id}">
                         <h4 class="imt"><img src="${item.img}"></h4>
