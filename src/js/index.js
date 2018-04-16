@@ -20,13 +20,10 @@
         var i=0;
         showTu();
         // 显示图片与圆圈的函数（）
-       
         function showTu(){
             i++;
-           
             var j=i-1;
             if(j<=0){
-             
                 j=5;
                 
             }
@@ -102,144 +99,119 @@
          }
 
 
-let ulss=document.querySelector('.ulss');
+        let ulss=document.querySelector('.ulss');
+            ajax.get({
+                url:'../api/home.php',
+                success:function(data){
+                    let ul=document.createElement('ul');
+                    ul.innerHTML=data.map(function(item){
+                        if(item.category=='a'){
+                            return `
+                                <li>
+                                <h4 class="iml">
+                                <img src="${item.img}"></h4>
+                                <p class="title">${item.title}</p>
+                                <span class="price">￥${item.price}</span>
+                                </li>`
+                        }
+                      
+                    }).join('');
+
+                    ulss.appendChild(ul);
+                    iml=document.getElementsByClassName('iml');
+                    for(let i=0;i<iml.length;i++){
+                        iml[i].onclick=function(){
+
+                            parame(i,data);
+                        }
+                    }
+                    function parame(idx,data){
+                        var str='';
+                        for(var arr in data[idx]){
+                            str+=arr+'='+encodeURI(data[idx][arr])+'&';
+                        }
+                        str=str.slice(0,-1);
+                        location.href='list.html?'+str;
+                    }
+                }
+            })
+
+
+        let ulo=document.querySelector('.ulo');
     ajax.get({
         url:'../api/home.php',
-        success:function(data){
-
-            let ul=document.createElement('ul');
-            ul.innerHTML=data.map(function(item){
-                if(item.category=='a'){
-
-                    return `
-                        <li>
-
-                        <h4 class="iml">
-                        <img src="${item.img}"></h4>
-                        <p class="title">${item.title}</p>
-                        <span class="price">￥${item.price}</span>
-                        </li>`
+            success:function(data){
+                let ul=document.createElement('ul');
+                ul.innerHTML=data.map(function(item){
+                    if(item.category=='b'){
+                        return `
+                            <li>
+                            <h4 class="iml">
+                            <img src="${item.img}"></h4>
+                            <p class="title">${item.title}</p>
+                            <span class="price">￥${item.price}</span>
+                            </li>`
                 
-                }
+                     }
               
-            }).join('');
+                }).join('');
 
-        ulss.appendChild(ul);
-
-            iml=document.getElementsByClassName('iml');
-      
-
-                for(let i=0;i<iml.length;i++){
-                    iml[i].onclick=function(){
-
-                        parame(i,data);
-                    }
-                }
-                function parame(idx,data){
-
-                    var str='';
-                    for(var arr in data[idx]){
-                        str+=arr+'='+encodeURI(data[idx][arr])+'&';
-                    }
-                    str=str.slice(0,-1);
-                    location.href='list.html?'+str;
-                }
-    }
-
-    })
-
-
-let ulo=document.querySelector('.ulo');
-    ajax.get({
-        url:'../api/home.php',
-        success:function(data){
-            let ul=document.createElement('ul');
-            ul.innerHTML=data.map(function(item){
-                if(item.category=='b'){
-
-                    return `
-                        <li>
-
-                        <h4 class="iml">
-                        <img src="${item.img}"></h4>
-                        <p class="title">${item.title}</p>
-                        <span class="price">￥${item.price}</span>
-                        </li>`
-                
-                }
-              
-            }).join('');
-
-          ulo.appendChild(ul);
-            iml=document.getElementsByClassName('iml');
-        
-                for(let i=0;i<iml.length;i++){
-                    iml[i].onclick=function(){
-
-                        parame(i,data);
-                    }
-                }
-                function parame(idx,data){
-
-                    var str='';
-                    for(var arr in data[idx]){
-                        str+=arr+'='+encodeURI(data[idx][arr])+'&';
-                    }
-                    str=str.slice(0,-1);
-                    location.href='list.html?'+str;
-                }
-    }
-
+                    ulo.appendChild(ul);
+                    iml=document.getElementsByClassName('iml');
+                        for(let i=0;i<iml.length;i++){
+                            iml[i].onclick=function(){
+                                    parame(i,data);
+                            }
+                        }
+                            function parame(idx,data){
+                                var str='';
+                                for(var arr in data[idx]){
+                                    str+=arr+'='+encodeURI(data[idx][arr])+'&';
+                                }
+                                str=str.slice(0,-1);
+                                location.href='list.html?'+str;
+                            }
+            }
     })
 
 
         let ulx=document.querySelector('.ulx');
+            ajax.get({
+                url:'../api/home.php',
+                success:function(data){
+                    let ul=document.createElement('ul');
+                    ul.innerHTML=data.map(function(item){
+                        if(item.category=='a'){
+                            return `
+                                <li>
+                                <h4 class="iml">
+                                <img src="${item.img}"></h4>
+                                <p class="title">${item.title}</p>
+                                <span class="price">￥${item.price}</span>
+                                </li>`
+                        
+                        } 
+                    }).join('');
 
-    ajax.get({
-        url:'../api/home.php',
-        success:function(data){
+                    ulx.appendChild(ul);
+                    iml=document.getElementsByClassName('iml');
+                    for(let i=0;i<iml.length;i++){
+                        iml[i].onclick=function(){
 
-            let ul=document.createElement('ul');
-            ul.innerHTML=data.map(function(item){
-                if(item.category=='a'){
+                            parame(i,data);
+                        }
+                    }
+                    function parame(idx,data){
 
-                    return `
-                        <li>
-
-                        <h4 class="iml">
-                        <img src="${item.img}"></h4>
-                        <p class="title">${item.title}</p>
-                        <span class="price">￥${item.price}</span>
-                        </li>`
-                
-                }
-              
-            }).join('');
-
-        ulx.appendChild(ul);
-
-            iml=document.getElementsByClassName('iml');
-     
-
-                for(let i=0;i<iml.length;i++){
-                    iml[i].onclick=function(){
-
-                        parame(i,data);
+                        var str='';
+                        for(var arr in data[idx]){
+                            str+=arr+'='+encodeURI(data[idx][arr])+'&';
+                        }
+                        str=str.slice(0,-1);
+                        location.href='list.html?'+str;
                     }
                 }
-                function parame(idx,data){
-
-                    var str='';
-                    for(var arr in data[idx]){
-                        str+=arr+'='+encodeURI(data[idx][arr])+'&';
-                    }
-                    str=str.slice(0,-1);
-                    location.href='list.html?'+str;
-                }
-
-    }
-
-    })
+            })
 
 
         let ulp=document.querySelector('.ulp');
@@ -249,90 +221,74 @@ let ulo=document.querySelector('.ulo');
                     let ul=document.createElement('ul');
                     ul.innerHTML=data.map(function(item){
                         if(item.category=='b'){
+                            return `
+                                <li>
 
-                    return `
-                        <li>
-
-                        <h4 class="iml">
-                        <img src="${item.img}"></h4>
-                        <p class="title">${item.title}</p>
-                        <span class="price">￥${item.price}</span>
-                        </li>`
+                                <h4 class="iml">
+                                <img src="${item.img}"></h4>
+                                <p class="title">${item.title}</p>
+                                <span class="price">￥${item.price}</span>
+                                </li>`
                 
-                }
+                        }
               
-            }).join('');
+                    }).join('');
+                            ulp.appendChild(ul);
+                            iml=document.getElementsByClassName('iml');
+                                for(let i=0;i<iml.length;i++){
+                                    iml[i].onclick=function(){
 
-          ulp.appendChild(ul);
+                                        parame(i,data);
+                                    }
+                                }
 
-            iml=document.getElementsByClassName('iml');
-                for(let i=0;i<iml.length;i++){
-                    iml[i].onclick=function(){
+                                function parame(idx,data){
 
-                        parame(i,data);
-                    }
+                                    var str='';
+                                    for(var arr in data[idx]){
+                                        str+=arr+'='+encodeURI(data[idx][arr])+'&';
+                                    }
+                                    str=str.slice(0,-1);
+                                    location.href='list.html?'+str;
+                                }
                 }
+            })
+                let ulf=document.querySelector('.ulf');
+                    ajax.get({
+                        url:'../api/home.php',
+                        success:function(data){
+                            let ul=document.createElement('ul');
+                            ul.innerHTML=data.map(function(item){
+                            if(item.category=='a'){
+                                return `
+                                    <li>
+                                    <h4 class="iml">
+                                    <img src="${item.img}"></h4>
+                                    <p class="title">${item.title}</p>
+                                    <span class="price">￥${item.price}</span>
+                                    </li>`
+                            }
+                            }).join('');
+                            ulf.appendChild(ul);
+                            iml=document.getElementsByClassName('iml');
+                            for(let i=0;i<iml.length;i++){
+                                iml[i].onclick=function(){
 
-                function parame(idx,data){
+                                    parame(i,data);
+                                }
+                            }
+                            function parame(idx,data){
 
-                    var str='';
-                    for(var arr in data[idx]){
-                        str+=arr+'='+encodeURI(data[idx][arr])+'&';
-                    }
-                    str=str.slice(0,-1);
-                    location.href='list.html?'+str;
-                }
-    }
+                                var str='';
+                                for(var arr in data[idx]){
+                                    str+=arr+'='+encodeURI(data[idx][arr])+'&';
+                                }
+                                str=str.slice(0,-1);
+                                location.href='list.html?'+str;
+                            }
+                        }
 
-    })
-        let ulf=document.querySelector('.ulf');
-
-            ajax.get({
-                url:'../api/home.php',
-                success:function(data){
-            let ul=document.createElement('ul');
-            ul.innerHTML=data.map(function(item){
-                if(item.category=='a'){
-
-                    return `
-                        <li>
-
-                        <h4 class="iml">
-                        <img src="${item.img}"></h4>
-                        <p class="title">${item.title}</p>
-                        <span class="price">￥${item.price}</span>
-                        </li>`
-                }
-              
-            }).join('');
-
-        ulf.appendChild(ul);
-            iml=document.getElementsByClassName('iml');
-       
-                for(let i=0;i<iml.length;i++){
-                    iml[i].onclick=function(){
-
-                        parame(i,data);
-                    }
-                }
-                function parame(idx,data){
-
-                    var str='';
-                    for(var arr in data[idx]){
-                        str+=arr+'='+encodeURI(data[idx][arr])+'&';
-                    }
-                    str=str.slice(0,-1);
-                    location.href='list.html?'+str;
-                }
-
-                
-
-
-
-    }
-
-    })
-
+                    })
 
         let ula=document.querySelector('.ula');
             ajax.get({

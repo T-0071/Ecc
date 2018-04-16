@@ -1,5 +1,5 @@
 
-  window.onload = function(){
+document.addEventListener('DOMContentLoaded',()=>{
 
         function goods(){
             var tabte = tabs.children[0].children;
@@ -60,4 +60,4 @@
                
                 goods();
              
-}
+})
